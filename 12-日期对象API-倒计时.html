@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 1210px;
+            margin: 100px auto;
+            color: red;
+            text-align: center;
+            font: 700 30px/30px "simsun";
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+
+        //需求:倒计时;
+        //思路:定义一个定时器,每一毫秒刷新一次,距离愚人节的时间转换成天时分秒....
+        //步骤:
+        //1.定义一个定时器
+        //2.在定时器里面获取未来时间和当前时间,获取他们的差值;
+        //3.把毫秒的差值转换成天时分秒赋值给box;
+
+
+        //获取事件源
+        var box = document.getElementsByClassName("box")[0];
+        //定义定时器
+        var timer = setInterval( function () {//每一毫秒,变化一次
+            //2.在定时器里面获取未来时间和当前时间,获取他们的差值;
+            var nowTim = new Date();
+            var futureTime = new Date("2017/4/1 17:14:00");
+            //获取毫秒的差值
+            var ss = futureTime.getTime() -nowTim.getTime();
+
+
+            //如果ss的差值<0了,就直接停止定时器;
+            //证明时间到了
+            if(ss<=0){//注意是<=
+                box.innerHTML = "愚人节快乐哦~";
+                clearInterval(timer);
+                return;//切断函数
+            }
+
+            //3.把毫秒的差值转换成天时分秒赋值给box;
+            var day = parseInt(ss/1000/60/60/24);
+            var hour = parseInt(ss/1000/60/60%24);
+            var minute = parseInt(ss/1000/60%60);
+            var second = parseInt(ss/1000%60);
+            var mills = parseInt(ss%1000);
+
+
+            //补齐0
+            day = day<10?"0"+day:day;
+            hour = hour<10?"0"+hour:hour;
+            minute = minute<10?"0"+minute:minute;
+            second = second<10?"0"+second:second;
+
+            //毫秒的特殊处理
+            if(mills<10){
+                mills="00"+mills;
+            }else if(mills<100){
+                mills="0"+mills;
+            }
+            //赋值
+            box.innerHTML = "距离愚人节还有"+day+"天"+hour+"小时"+minute+"分"+second+"秒"+mills+"毫秒";
+
+        },1)
+
+    </script>
+</body>
+</html>

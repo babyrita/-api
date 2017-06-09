@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+
+
+<script>
+    var arr = [1,2,3];
+    console.log(arr);
+
+
+    //第一种：(无法操作伪数组)
+
+    arr.splice(0);
+    console.log(arr);
+
+
+
+    //第二种：(无法操作伪数组)
+    arr.length =0;
+    console.log(arr);
+
+
+    //第三种：(可以操作伪数组==推荐方法)；
+    arr = [];
+    console.log(arr);
+
+
+    //2.伪数组：和数组类似；但是不能使用数组的方法；
+    //(1).arguments;  实参组成的伪数组,只在函数中出现;
+    //(2).getElementsByClassName/TagName();  返回值都是伪数组;
+
+    fn("aaa","bbb","ccc");
+
+    function fn(){
+        console.log(arguments);//调用函数时实参组成的数组;
+
+        console.log(arguments.length);//调用函数时实参的个数;
+
+        console.log(arguments.callee);//调用函数时的函数名 === 整个函数
+
+        arguments.length = 0;
+        console.log(arguments);//可以设置长度,但是元素不会变没;
+
+    }
+
+    //获取伪数组;
+    var liArr = document.getElementsByTagName("li");
+    console.log(arr);
+    console.log(arr.push("aaa"));//伪数组的特性,不能调用数组的方法;
+
+
+    //清空伪数组;
+
+    liArr = [];
+    console.log(liArr);
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

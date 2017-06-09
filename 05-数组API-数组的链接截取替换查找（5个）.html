@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //1.concat();链接数组;
+        var arr1 = [1,2,3];
+        var arr2 = ["a","b","c"]
+        var arr3 = arr1.concat(arr2);
+        console.log(arr3);
+
+
+        //2.slice();数组元素的截取；(根据索引值截取)
+//        console.log(arr3.slice()); //截取整个数组
+//        console.log(arr3.slice(2)); //从索引值为2截取到最后
+//        console.log(arr3.slice(2,4)); //按索引值截取，包左不包右；[2,4);
+//
+//        console.log(arr3.slice(-2)); //截取最后两个
+//        console.log(arr3.slice(4,2)); //前大后小为空数组
+//
+//
+//        console.log(arr3);//原数组不变
+
+
+
+        //3.splice(); 替换和删除数组中元素的功能;(原数组被修改)
+//        var aaa = arr3.splice();
+//        var aaa = arr3.splice(0);
+//        console.log(aaa);
+//        console.log(arr3);
+
+
+
+//        var aaa = arr3.splice(0,3);//一个参数为:从该索引值位置截取到最后;第二个参数为要截取的个数;
+//        console.log(aaa); //截取前面3个
+//        console.log(arr3);//剩下的3个
+
+
+        //删除的特殊用法:可以删除指定位置的元素;
+        arr3.splice(2,1);
+        console.log(arr3);
+
+
+        //替换;第三个参数
+        var aaa = arr3.splice(2,1,"abc");//指定位置替换
+        console.log(aaa);
+        console.log(arr3);
+
+
+        //批量替换;不能使用数组,只能一个一个的使用参数;
+        arr3.splice(3,3,"你","我","他");
+        console.log(arr3);
+
+
+        //4.indexOf()、lastIndexOf() ：给元素查索引值，一个从前往后查，一个人从后往前查；
+        // 如果没找到返回-1；  （索引值一旦加载永远不会改变）；
+
+
+        var arr = ["a","b","c","b","a","d","e"];
+        console.log(arr.indexOf("a"));//0
+        console.log(arr.indexOf("e"));//6
+        console.log(arr.lastIndexOf("a"));//4
+
+
+        //查不到是-1；
+        console.log(arr.indexOf("y"));
+        console.log(arr.lastIndexOf("y"));
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

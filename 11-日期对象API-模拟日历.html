@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 1210px;
+            margin: 100px auto;
+            color: red;
+            text-align: center;
+            font: 700 30px/30px "simsun";
+        }
+    </style>
+
+</head>
+<body>
+<div class="box"></div>
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var week = date.getDay();
+
+        var arr = ["日","一","二","三","四","五","六"]
+
+        box.innerHTML = "今天是"+year+"年"+(month+1)+"月"+day+"日"+arr[week]+"天气晴朗";
+    </script>
+
+
+    <!--第二遍-->
+    <!--<script>
+        var box = document.getElementsByClassName("box")[0];
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var week = date.getDay();
+        var arr = ["日","一","二","三","四","五","六"];
+        box.innerHTML = "今天是"+year+"年"+(month+1)+"月"+day+"日"+arr[week]+"天气晴朗";
+    </script>-->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+
+
+
+        //1.链接;concat();   但是没人用;
+        var str1 = "abcd";
+        var str2 = "1234";
+        var str3 = str1.concat(str2);
+        console.log(str3);
+
+
+
+        //2.字符串的截取
+        //slice();类比数组;根据索引值截取字符串
+//        console.log(str3.slice(2));    //从第二个开始,截取后面全部的
+//        console.log(str3.slice(-2));   //从最后截取两个
+//        console.log(str3.slice(2,5));   //包左不包右,也就是说从截取的是索引值为2/3/4的三个数字
+//        console.log(str3.slice(5,2));  //空的字符串
+//
+//
+//
+//        //substr();不遵循驼峰命名(基本没有被修改过的方法)   根据索引值和长度获取
+//        console.log(str3.substr(2)); //从第二个开始,截取后面全部的
+//        console.log(str3.substr(-2)); //从最后截取两个
+//        console.log(str3.substr(2,5));  //从第二个开始,截取5个
+//        console.log(str3.substr(2,10));//从第二个开始,截取10个,不足10的,都截取
+
+
+        //substring();和slice一样;
+        //1.智能调换.如果前面的比后面的大.前后交换
+        //2.负数全部截取;
+
+        console.log(str3.substring(2));     //从第二个开始,截取后面全部的
+        console.log(str3.substring(-2));    //截取全部
+        console.log(str3.substring(0,3));  //包左不包右,也就是说从截取的是索引值为2/3/4的三个数字
+        console.log(str3.substring(7,0)); //智能调换,意思是,前面和后面的数更换
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

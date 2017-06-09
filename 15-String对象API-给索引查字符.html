@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //给一个参数(索引值),查看该索引值位置的字符!
+//
+//        var str = "0aA我";
+//        //1.charAt(索引值);    给索引查字符!
+//        console.log(str.charAt(0));
+//        console.log(str.charAt(1));
+//        console.log(str.charAt(2));
+//        console.log(str.charAt(3));
+//
+//        //2.字符串[索引值]:     给索引查字符!   H5新增方法,ie678不支持
+//        console.log(str[0]);
+//        console.log(str[1]);
+//        console.log(str[2]);
+//        console.log(str[3]);
+//
+//
+//        //3.charCodeAt(索引值);  给索引查字符串对应的Unicode编码
+//        console.log(str.charCodeAt(0));
+//        console.log(str.charCodeAt(1));
+//        console.log(str.charCodeAt(2));
+//        console.log(str.charCodeAt(3));
+
+        var str = "我爱你中国,我亲爱的母亲!";
+        //看str占多少个字符位.
+        //超出0-127之间的字符都给两个字符串位;
+
+        var num =0;
+        for(var i=0;i<str.length;i++){
+            if(str.charCodeAt(i)>0 && str.charCodeAt(i)<=127){
+                num+=1;
+            }else{
+                num+=2;
+            }
+        }
+        console.log(num);//结果是24,汉子占两个字符位置,标点占一个
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

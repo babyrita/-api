@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr = ["刘备","张飞","关羽"];
+    console.log(arr.join("|"));
+
+
+    var str = arr[0];
+    for(var i=0;i<arr.length;i++){
+        str+="|"+arr[i];
+    }
+    console.log(str);
+
+
+
+                var arr = ["a","b","c","d"];
+            console.log(arr.reverse());
+
+
+    var arr = ["c","a","z","a","a"];
+    var json={};
+    for(var i=0;i<arr.length;i++){
+        var key = arr[i];
+        if(json[key] !==undefined){
+            json[key]=json[key]+1
+        }else{
+            json[key]=1;
+        }
+    }
+    console.log(json);
+
+
+    //        4.工资的数组[1500,1200,2000,2100,1800],把工资超过2000的删除
+    //        var arr = [1500,1200,2000,2100,1800];
+    //
+    //        //filter():返回值为true项,组成的数组;   >2000就返回false;就不会添加到数组中了;
+    //        var newArr = arr.filter(function (ele, index, array) {
+    //            //大于2000的不添加
+    //            if(ele>=2000){
+    //                return false;//不添加
+    //            }else{
+    //                return true;//添加小于的组成的数组;
+    //            }
+    //        })
+    //            console.log(newArr);
+
+
+
+
+    //        5.数组去重。（最难）
+    var arr = ["鸣人","鸣人","佐助","佐助","小樱","小樱"];
+
+
+    //第一种:(难一点)
+    //        var newArr = [];//用来添加原数组中的元素,如果新数组中有了,就不在添加了!
+    //        //外循环控制老数组中的元素.
+    //        for(var i=0;i<arr.length;i++){
+    //            //设置一个开闭原则:
+    //            var bool = true;
+    //            //内循环控制新数组中的元素;
+    //            for(var j=0;j<newArr.length;j++){
+    //                //判断:如果新数组中已经存在了就不用再添加了.
+    //                    //如果本次判断:新数组中不存在,不确定是否添加;(还要判断后面的)
+    //                if(arr[i] === newArr[j]){
+    //                    //只要相等就不允许添加;新数组中已经存在了!
+    //                    bool = false;
+    //                }
+    //            }
+    //            //判断:是否添加该项老数组中元素到新数组中;
+    //            if(bool){
+    //                newArr[newArr.length] = arr[i];
+    //            }
+    //        }
+    //
+    //        console.log(newArr);
+
+
+
+    //第二种:
+    //        var newArr = [];//创建一个新数组,添加老数组中的元素
+    //        //for循环遍历老数组,然后判断,只要新数组中没有老数组这一项,就可以添加;
+    //        for(var i=0;i<arr.length;i++){
+    //            //判断,只要新数组中没有老数组这一项,就可以添加;
+    //            if(newArr.indexOf(arr[i]) === -1){
+    //                newArr.push(arr[i]);
+    //            }
+    //        }
+    //        console.log(newArr);
+
+
+
+
+
+
+</script>
+</body>
+</html>

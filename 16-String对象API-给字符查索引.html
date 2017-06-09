@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    //indexOf/lastIndexOf();  给字符查索引值;查不到返回-1;
+
+    var str = "abcdedcba";
+    console.log(str.indexOf("a")); //0
+    console.log(str.lastIndexOf("a")); //8
+
+    //如果不包含,或者包含不完整,或者顺序不对,返回-1;
+    console.log(str.indexOf("ad"));
+    console.log(str.indexOf("ace"));
+    console.log(str.indexOf("xxx"));
+
+
+      //如果完整包含,以首字母为准
+        console.log(str.indexOf("abc"));
+    console.log(str.indexOf("ded"));
+
+
+
+</script>
+</body>
+</html>

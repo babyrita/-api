@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //截取字符串"我爱中华人民共和国"，中的"中华"
+                var str = "我爱中华人民共和国";
+                console.log(str.slice(2,4));
+
+
+                //"abcoefoxyozzopp"查找字符串中所有o出现的位置
+                var str = "abcoefoxyozzopp";
+                 //遍历元素,判断,输出索引值;
+                for(var i=0;i<str.length;i++){
+                    if(str[i]==="o"){
+                        console.log(i)
+                    }
+                }
+
+
+                //把字符串中所有的o替换成!
+                var str = "abcoefoxyozzopp";
+                console.log(str.replace(/o/g,"!"));//全局替换
+
+
+
+
+        //判断一个字符串中出现次数最多的字符，统计这个次数
+        var str = "abcoefoxyozzopp";
+        var json = {};
+        //遍历
+        for(var i=0;i<str.length;i++){
+            //判断
+            if(json[str.charAt(i)] !== undefined){
+                json[str.charAt(i)] = json[str.charAt(i)]+1;//如果满足条件就+1
+            }else{
+                json[str.charAt(i)] = 1;//不满足就赋值为1
+            }
+        }
+        console.log(json);
+
+    </script>
+
+
+</body>
+</html>

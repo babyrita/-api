@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "abc";//简单数据类型
+        var obj = new Object();//复杂数据类型
+        obj.aaa = 111;
+        console.log(obj.aaa);// return 111
+
+        //简单数据类型没有属性绑定
+        var strObj = new String(str);//包装类型,简单数据类型的对象包装班
+        strObj.ccc = 222;
+        console.log(strObj.ccc);//return 333
+
+        //简单类型和包装类型,一个大写,一个小写,有一个可以定义属性和方法,一个不能
+        //简单数据类型在调用属性和方法的时候,转换成了包装类型进行调用,完毕后再变回
+        //简单数据类型
+
+
+        //简单数据类型可以调用自身有的属性和方法,但是无法自定义属性和方法
+
+
+
+
+    </script>
+</body>
+</html>

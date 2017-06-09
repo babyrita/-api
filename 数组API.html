@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    push();  //在数组最后面插入,返回数组的长度
+    pop();  //取出数组中的最后一项,返回最后一项
+    //被删除的元素 = 数组.pop()
+    unshift(); //在数组最前面插入项,返回数组的长度
+    shift(); //取出数组的第一个元素,返回最后一项
+    var arr = [11,22,33]
+    var aa = arr.push("abc");
+    console.log(aa); //返回新数组的长度
+
+    console.log(arr);//原来的数组被修改,在最末尾添加一个元素
+
+    pop(); 
+    var aaa = arr.pop();
+    console.log(aa); //返回值被删除的数组中的最后一个元素
+    console.log(arr);//原数组被修改,最末尾删除一个元素
+
+
+    unshift();//在数组最前面插入项目,返回数组的长度
+    var bb = arr.unshift("abc");
+    console.log(bb);
+    console.log(arr);
+
+    shift();
+    var cc = arr.shift();
+    console.log(cc);
+    console.log(arr);
+
+    // push底层原理
+    Array.prototype.aaa= function (ele){
+        this[this.length] = ele;
+        return this.length;
+    } 
+    var dd = arr.aa(44);
+    console.log(arr);
+    console.log(dd);
+
+
+reverse();//数组翻转.原数组同时被修改
+sort();//数组元素排序,原数组同时被修改
+
+reverse();
+var arr = [1,2,3,4,5,6];
+console.log(arr);
+var aa = arr.reverse();
+console.log(aa);
+console.log(arr);
+console.log(arr ===aa );
+
+sort();
+var arr1 = [3,5,6,2,1,4];//
+var arr2 = ["c","d","a"];//也可以排列字母
+
+缺点:
+按照首字母的unicode编码排序,如果第一个相同,排列第二个
+
+//原数组中的元素首尾交换位置(底层原理)
+1.正向遍历,反向添加
+function rev1 (array){
+    var newArr = [];
+    for(var i=0;i<array.length;i++){
+        newArr[newArr.length] = array[array.length-1-i];
+    }
+    return newArr;//原数组被修改
+}
+
+function rev2(array){
+    var newArr = [];
+    for(var i =arr.length-1;i>=0;i--){
+        newArr.push(array[i]);
+    }
+    return array;
+}
+
+//原数组中的元素首尾交换位置(底层原理)
+function rev3(array){
+    for(var i=0;i<array.length/2;i++){
+        var temp = array[i];
+        array[i] = array[array.length-1-i];
+        array[array.length-1-i] = temp;
+    }
+    return array;
+}
+
+
+concat();//链接数组
+var arr1 = [12,34];
+var arr2 = [34,56];
+var arr3 = arr1.concat(arr2);
+
+//slice(); 数组元素的截取(根据索引值)
+console.log(arr3.slice());//截取整个数组
+console.log(arr3.slice(2));//从索引值为2,截取到数组最末尾
+console.log(arr3.slice(2,4));//按索引值截取,包左不包右
+console.log(arr3.slice(-2));//负值为最后几位
+console.log(arr3.slice(4,2));//前大后小为[]
+
+console.log(arr3);//原数组不被修改
+
+
+slice();//数组元素的截取,根据索引值
+
+splice();//替换和删除数组中元素的功能(原数组被修改)
+var aa = arr3.splice();//为指定要删除的元素
+var aaa = arr3.splice(0);//一个参数为:从该索引位置截取到最后
+console.log(aaa);//原数组整体截取,删除
+console.log(arr3);
+
+
+var aa = arr3.splice(0,3);
+//一个参数,从该索引位置截取到最后,第二参数,为要截取的个数
+
+arr3.splice(2,1);//指定索引值删除
+console.log(arr3);
+
+
+//第三个参数,是替换
+var aaa = arr3.splice(2,1,"abc");//替换
+console.log(arr3);
+
+var bbb = arr3.splice(2,0,"ab");//指定位置添加
+//批量替换,不能舒勇数组,只能一个个的使用参数
+arr.splice(3,3,"a","你");
+console.log(arr);
+
+var arr4 = ["你","我","他"];
+arr.splice(3,3,arr4);
+
+indexOf();
+lastIndexOf();
+//给元素查索引,一个从前往后查,一个从后往前查
+//如果没有找到,就返回-1
+
+
+//数组遍历的5个方法
+every();
+//遍历数组的每一项,数组总有一项返回值为false,结果也是false,只有全部是
+//true,才是true
+//用法
+arr.every(function (a,b,c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+    return true;
+})
+
+//判断,所有的数都大于2800
+//判断,所有的数都大于400
+var bool = arr.every(function (ele,index,array){
+    if(ele>2800){
+        if(ele>400){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    console.log(bool);
+})
+
+//2.filter();返回一个数组,返回值为true的那一项,组成的数组
+var arr2 = arr.filter(function (ele,index,array){
+    //大于1200组成的数组
+    //小于1800组成的数组
+    if(ele>1200){
+        if(ele<1800){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+})
+//3.forEach();遍历数组,没有任何返回值
+
+//4.返回一个数组,return值组成的数组map
+
+//5.有个像返回是true,结果就是true.全是false,才是false
+var bool1 = arr.some(function ( ele,index,array){
+    if(ele<300){
+        return true;
+    }else{
+        return false;
+    }
+});
+
+console.log(bool1);
+
+//清空数组的三种方法
+arr.splice(0);//无法清空伪数组
+arr.length=0;//无法清空伪数组
+arr = [];//可以操作伪数组
+
+
+
+
+
+
+</script>
+</body>
+</html>

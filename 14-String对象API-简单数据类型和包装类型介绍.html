@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        var str = "abc";//简单数据类型
+        var obj = new Object();//复杂数据类型
+        obj.aaa = 111;
+        console.log(obj.aaa);//结果是111
+
+        str.bbb = 222;
+        console.log(str.bbb); //结果是undefinded,因为简单数据类型没有属性绑定
+
+
+        var strObj = new String(str);//包装类型;简单数据类型的对象包装版!
+        strObj.ccc = 333;
+        console.log(strObj.ccc);//结果是333
+
+
+        //简单类型和包装类型:一个大写一个小写;有一个可以定义属性和方法,一个不能;
+        console.log(str.length); //可以通过length获取字符串长度
+        console.log(str.indexOf("b")); //可以调用方法
+
+
+        //原因: 简单数据类型在调用属性和方法的时候转换成了包装类型进行调用,完毕后在变回简单类型;
+        //原因:简单数据类型在调用属性和方法的时候转换成了包装类型进行调用,完毕后再变回简单类型
+
+        //总结: 简单数据类型可以调用自身有的属性和方法;但是无法自定义属性和方法!
+        //总结:简单数据类型调用自身有的属性和方法,但是无法自定义属性和方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

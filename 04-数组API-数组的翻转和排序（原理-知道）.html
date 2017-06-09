@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //1.reverse();数组元素反转：原数组同时被修改；
+    //数组翻转的方法有3个：
+    //1.正向遍历,反向添加.   2.反向遍历,正向添加.
+    //3.原数组中的元素收尾交换位置;(底层原理)
+
+    //1.正向遍历,反向添加.   2.反向遍历,正向添加.
+    function rev(array){
+        var newArr = [];
+        for(var i=0;i<array.length;i++){
+            newArr[newArr.length]=array[array.length-1-i]
+        }
+        return newArr;//原来的数组未被修改
+    }
+    function rev2(array){
+        var newArr = [];
+        for(var i=arr.length-1;i>=0;i--){
+            newArr[newArr.length]=array[array.length-1-i]
+            newArr.push(arr[i]);
+        }
+        return newArr;//原来的数组未被修改
+    }
+    //3.原数组中的元素首尾交换位置;(底层原理)
+    function rev3(array){
+        for(var i=0;i<array.leng/2;i++){
+            var temp = array[i];
+            array[i] = array[i+1];
+            array[i+1] = temp;
+        }
+        return array;
+    }
+
+
+
+
+
+
+
+    //2.sort();   数组元素排序：原数组同时被修改；
+    //知道: 模拟模拟冒泡排序;
+    var arr = [3,2,5,11,4];
+    bubbleSort = (arr,function(a,b){
+        return b-a;
+    })
+    console.log(arr);
+
+
+    //sort方法底层原理;
+    function bubbleSort(array,fn){
+        for(var i=0;i<array.length-1;i++){
+            for(var j=0;j<arrat.length-1;j++){
+                if(array[j]-array[j+1]>0){
+                    if(fn(array[i],array[j+1])>0)
+                        var temp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
+
+                }
+            }
+        }
+    }
+
+bubbleSort = (arr,function(a,b){
+    return b-a;
+    })
+
+
+
+
+
+
+</script>
+</body>
+</html>
